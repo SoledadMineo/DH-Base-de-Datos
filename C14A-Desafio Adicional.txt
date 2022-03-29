@@ -1,0 +1,28 @@
+1.
+SELECT movies.title, genres.name  
+FROM movies_db.movies 
+join movies_db.genres 
+on movies.genre_id = genres.id
+
+2.
+SELECT episodes.title, actors.first_name, actors.last_name 
+FROM movies_db.episodes
+inner join movies_db.actor_episode
+on episodes.id = actor_episode.actor_id
+inner join movies_db.actors
+on actor_episode.actor_id = actors.id
+
+3.
+SELECT actors.first_name, actors.last_name 
+FROM movies_db.actors
+inner join movies_db.actor_movie
+on actor_movie.actor_id = actors.id
+inner join movies_db.movies
+on movies.id = actor_movie.movie_id
+where movies.title = "La Guerra de las galaxias"
+
+4.
+SELECT movies.title, genres.name 
+FROM movies_db.movies
+INNER JOIN movies_db.genres
+on movies.genre_id= genres.id
